@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2024 at 05:22 AM
+-- Generation Time: Nov 08, 2024 at 05:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -18,8 +18,52 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rawdata`
+-- Database: `cheatsheet`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_master`
+--
+
+CREATE TABLE `admin_master` (
+  `id` int(11) NOT NULL,
+  `admin_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `user_type` varchar(255) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `admin_master`
+--
+
+INSERT INTO `admin_master` (`id`, `admin_name`, `email`, `password`, `user_type`, `status`) VALUES
+(1, 'NEHA', 'nehamer@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Super Admin', 1),
+(2, 'XYZ', 'xyz@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Admin', 1),
+(3, 'Jayy', 'jay@gmail.com', '1f32aa4c9a1d2ea010adcf2348166a04', 'Admin', 0),
+(4, 'Jay', 'jay@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'Admin', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `modules`
+--
+
+CREATE TABLE `modules` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `modules`
+--
+
+INSERT INTO `modules` (`id`, `name`) VALUES
+(1, 'Discover'),
+(2, 'Report');
 
 -- --------------------------------------------------------
 
@@ -72,8 +116,7 @@ INSERT INTO `owner` (`id`, `name`) VALUES
 (14, 'Nikhil Amin'),
 (15, 'Meenakshi Juyal'),
 (16, 'Aditya Konar'),
-(17, 'Praful Bhatnagar'),
-(18, 'Jenil');
+(17, 'Praful Bhatnagar');
 
 -- --------------------------------------------------------
 
@@ -2578,19 +2621,19 @@ INSERT INTO `raw_data` (`id`, `names`, `month`, `owner`, `date`, `vertical`, `of
 (2412, '', 'Nov', '16', '2024-11-04', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||InsureYourDrive||', 'US', 'Smart Financial Direct', 1, 990, 1.04, 1678.47, 1678.47, 1027, 1634.34, 21, 79.93, 2.04, 20.63, 0.01284920195, 4.76, 0.33, -13.62698072, -194.67, 4, 1, 0, 7, 1.75, 0, 0, 0, 0, 0, 0, 0, 0),
 (2413, '', 'Nov', '16', '2024-11-04', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||ProtectYourPath||', 'US', 'Smart Financial Direct', 2, 931, 1.04, 830.9, 1661.79, 965, 1722.06, 15, 110.79, 1.55, 20.42, 0.008710486885, 6.67, 0.6, -11.42199759, -126.91, 2, 1, 0, 9, 4.5, 0, 0, 0, 0, 0, 0, 0, 0),
 (2414, '', 'Nov', '16', '2024-11-04', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||DrivewithEase||', 'US', 'Smart Financial Direct', 4, 773, 1.02, 398.88, 1595.53, 791, 2017.1, 38, 41.99, 4.8, 19.61, 0.01883888113, 5.26, 0.37, -5.607718072, -40.06, 5, 2, 0, 14, 2.8, 0, 0, 0, 0, 0, 0, 0, 0),
-(2415, '', 'Nov', '13', '2024-11-04', '2', NULL, 'Flight Call INC', '2', '11', 'JBU', '\nFCINC_TopStates_12:30_8:30_AA_MaxClicks', '', '', 0, 0, 0, 0, 2206.39, 139, 0, 9, 245.15, 6.47, 26.58, 0, 0, 0, -26.58301205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2415, '', 'Nov', '13', '2024-11-04', '2', NULL, 'Flight Call INC', '2', '12', 'JBU', '\nFCINC_TopStates_12:30_8:30_AA_MaxClicks', '', '', 0, 0, 0, 0, 2206.39, 139, 0, 9, 245.15, 6.47, 26.58, 0, 0, 0, -26.58301205, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2416, '', 'Nov', '13', '2024-11-04', '2', NULL, 'Flight Call INC', '2', '12', 'AA2', '\nFCINC_US_12/8_AA_BRANDED\n', '', '', 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2417, '', 'Nov', '12', '2024-11-04', '2', NULL, 'Flight Call INC', '2', '11', 'Travel Generic', 'Harshana-Generic Flight Booking', '', '', 0, 0, 0, 0, 794.89, 18, 0, 4, 198.51, 22.22, 9.58, 0, 0, 0, -9.576987952, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2418, '', 'Nov', '12', '2024-11-04', '2', NULL, 'Flight Call INC', '2', '11', 'Travel N4-UTC-5', 'FCINC_TopStates_24/7_SW', '', '', 0, 0, 0, 0, 1147.33, 39, 0, 4, 286.83, 10.26, 13.82, 0, 0, 0, -13.82325301, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2419, '', 'Nov', '12', '2024-11-04', '2', NULL, 'Flight Call INC', '2', '11', 'Travel Generic', 'FCINC_TopStates_2-10pm_SW_Maxconv', '', '', 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2420, '', 'Nov', '17', '2024-11-04', '2', NULL, 'Calls Mojo', '2', '16', 'Travel Generic', 'CallsMJ_US_Generic_Maxconv_9am-5pmEST', '', '', 0, 0, 0, 0, 4444.43, 143, 0, 18, 247.32, 12.59, 53.55, 0, 0, 0, -53.5473494, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(2421, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||10-9||Lead||Easy Insurance||', 'US', 'Smart Financial Direct', 291, 75306, 1.04, 592.73, 172485.12, 78595, 2194.61, 3061, 56.35, 3.89, 2119.7, 1.394782895, 5.95, 0.64, -159.6966554, -8.15, 1302, 182, 0, 1960, 1.51, 0, 0, 0, 0, 0, 0, 0, 0),
+(2421, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||10-9||Lead||Easy Insurance||', 'US', 'Smart Financial Direct', 291, 75306, 1.04, 592.73, 172485.12, 78595, 2194.61, 3061, 56.35, 3.89, 2119.7, 1.394782895, 5.98, 0.64, -147.6966554, -7.49, 1302, 183, 0, 1972, 1.51, 0, 0, 0, 0, 0, 0, 0, 0),
 (2422, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||24-9||Lead||Total Car Protection||', 'US', 'Smart Financial Direct', 67, 24050, 1.08, 665.44, 44584.81, 25911, 1720.69, 838, 53.2, 3.23, 547.91, 0.4870138059, 5.25, 0.54, -96.90971325, -21.49, 309, 44, 0, 451, 1.46, 0, 0, 0, 0, 0, 0, 0, 0),
 (2423, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||24-9||Lead||Easy Auto Coverage||', 'US', 'Smart Financial Direct', 39, 14286, 1.05, 625.93, 24411.34, 14998, 1627.64, 456, 53.53, 3.04, 299.99, 0.2801602862, 5.26, 0.37, -131.4947807, -78.04, 166, 24, 0, 169, 1.02, 0, 0, 0, 0, 0, 0, 0, 0),
 (2424, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||Lead||5-11||AssuredAutoUSA||', 'US', 'Smart Financial Direct', 8, 2419, 1.08, 932.72, 7461.76, 2614, 2854.54, 36, 207.27, 1.38, 91.7, 0.01261150184, 13.89, 0.88, -60.19873735, -191.11, 17, 5, 0, 32, 1.85, 0, 0, 0, 0, 0, 0, 0, 0),
 (2425, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||DrivewithEase||', 'US', 'Smart Financial Direct', 0, 1576, 1.03, 0, 2955.92, 1630, 1813.45, 80, 36.95, 4.91, 36.33, 0.04411486102, 0, 0, -36.32576386, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2426, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||Lead||5-11||SureDriveUSA||', 'US', 'Smart Financial Direct', 4, 372, 1.1, 711.21, 2844.83, 409, 6955.57, 21, 135.47, 5.13, 34.96, 0.003019161075, 19.05, 2.29, 13.03943855, 27.17, 7, 4, 0, 48, 6.86, 0, 0, 0, 0, 0, 0, 0, 0),
-(2427, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||10-9||Lead||United Auto Insurance||', 'US', 'Smart Financial Direct', 8, 1586, 1.05, 347, 2776.01, 1670, 1662.28, 26, 106.77, 1.56, 34.11, 0.01564115403, 0, 0, -34.11482169, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2427, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||10-9||Lead||United Auto Insurance||', 'US', 'Smart Financial Direct', 8, 1586, 1.05, 347, 2776.01, 1670, 1662.28, 26, 106.77, 1.56, 34.11, 0.01564115403, 15.38, 0.81, -13.11482169, -62.45, 11, 4, 0, 21, 1.91, 0, 0, 0, 0, 0, 0, 0, 0),
 (2428, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||Shield Your Drive||', 'US', 'Smart Financial Direct', 0, 1630, 1.03, 0, 2736.17, 1680, 1628.67, 34, 80.48, 2.02, 33.63, 0.02087589587, 0, 0, -33.62522169, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2429, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||InsureYourDrive||', 'US', 'Smart Financial Direct', 0, 1318, 1.05, 0, 2691.67, 1381, 1949.07, 20, 134.58, 1.45, 33.08, 0.0102612876, 0, 0, -33.07835422, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2430, '', 'Nov', '16', '2024-11-05', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||4-11||Lead||ProtectYourPath||', 'US', 'Smart Financial Direct', 3, 1514, 1.04, 888.29, 2664.86, 1582, 1684.49, 21, 126.9, 1.33, 32.75, 0.01246669619, 9.52, 0.64, -19.24888193, -142.58, 6, 2, 0, 14, 2.25, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -2606,7 +2649,7 @@ INSERT INTO `raw_data` (`id`, `names`, `month`, `owner`, `date`, `vertical`, `of
 (2440, '', 'Nov', '12', '2024-11-05', '2', NULL, 'Flight Call INC', '2', '11', 'Travel Generic', 'Harshana-Generic Flight Booking', '', '', 0, 0, 0, 0, 1575, 165, 0, 8, 196.98, 4.85, 18.98, 0, 0, 0, -18.97590361, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2441, '', 'Nov', '12', '2024-11-05', '2', NULL, 'Flight Call INC', '2', '11', 'Travel N4-UTC-5', 'FCINC_TopStates_24/7_SW', '', '', 0, 0, 0, 0, 580.84, 39, 0, 2, 290.42, 5.13, 7, 0, 0, 0, -6.998072289, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2442, '', 'Nov', '12', '2024-11-05', '2', NULL, 'Flight Call INC', '2', '11', 'Travel Generic', 'FCINC_TopStates_2-10pm_SW_Maxconv', '', '', 0, 0, 0, 0, 1830.07, 39, 0, 3, 610.3, 7.69, 22.05, 0, 0, 0, -22.04903614, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(2443, '', 'Nov', '17', '2024-11-05', '2', NULL, 'Calls Mojo', '2', '11', 'Travel Generic', 'CallsMJ_US_Generic_Maxconv_9am-5pmEST', '', '', 0, 0, 0, 0, 36740.23, 1044, 0, 116, 316.52, 11.11, 442.65, 0, 0, 0, -442.6533735, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2443, '', 'Nov', '17', '2024-11-05', '2', NULL, 'Calls Mojo', '2', '11', 'Travel Generic', 'CallsMJ_US_Generic_Maxconv_9am-5pmEST', '', '', 0, 0, 0, 0, 36740.23, 1044, 0, 116, 316.52, 11.11, 442.65, 0, 2.59, 0.57, -376.6533735, -570.69, 0, 3, 3, 66, 0, 6, 3, 73.78, 147.5511245, 22, 0, 0, 0),
 (2444, '', 'Nov', '16', '2024-11-06', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||10-9||Lead||Easy Insurance||', 'US', 'Smart Financial Direct', 158, 61828, 1.04, 712.45, 112566.74, 64482, 1745.71, 1778, 63.31, 2.76, 1383.35, 1.018497968, 5.4, 0.55, -412.8502988, -42.54, 712, 96, 0, 971, 1.36, 0, 0, 0, 0, 0, 0, 0, 0),
 (2445, '', 'Nov', '16', '2024-11-06', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||24-9||Lead||Total Car Protection||', 'US', 'Smart Financial Direct', 41, 28223, 1.1, 1076.66, 44143.16, 31051, 1421.63, 749, 58.94, 2.41, 542.48, 0.5268584985, 4.01, 0.41, -236.4822072, -77.28, 267, 30, 0, 306, 1.15, 0, 0, 0, 0, 0, 0, 0, 0),
 (2446, '', 'Nov', '16', '2024-11-06', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||10-9||Lead||United Auto Insurance||', 'US', 'Smart Financial Direct', 58, 17038, 1.05, 400.57, 23233, 17883, 1299.17, 685, 33.92, 3.83, 285.51, 0.5272610082, 6.42, 0.42, -0.01397590361, 0, 334, 44, 0, 286, 0.85, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -2625,7 +2668,31 @@ INSERT INTO `raw_data` (`id`, `names`, `month`, `owner`, `date`, `vertical`, `of
 (2459, '', 'Nov', '16', '2024-11-06', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||29-10||Lead||SafePathAutoInsurance||', 'US', 'Smart Financial Direct', 1, 291, 1.09, 424.87, 424.87, 316, 1344.53, 5, 84.97, 1.58, 5.22, 0.003718784571, 0, 0, -5.221293976, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2460, '', 'Nov', '16', '2024-11-06', '10', '2', 'Smart Financial direct', '1', '15', 'Mobavenue - H1 ad account 25', 'SF||D||6-9||Lead||Secure Drive Policies||', 'US', 'Smart Financial Direct', 0, 86, 1.01, 0, 122.82, 87, 1411.72, 2, 61.41, 2.3, 1.51, 0.001416707377, 0, 0, -1.509354217, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (2461, '', 'Nov', '13', '2024-11-06', '2', NULL, 'Flight Call INC', '2', '12', 'Travel Generic ive', 'FCINC_US_12:30-8:30_Generic', '', '', 0, 0, 0, 0, 22865.68, 927, 0, 927, 586.3, 100, 275.49, 0, 1.08, 0.27, -25.49012048, -10.2, 0, 10, 1, 250, 0, 12, 10, 22.96, 27.54901205, 25, 0, 0, 0),
-(2462, '', 'Nov', '18', '2024-11-06', '2', NULL, 'Flight Call INC', '2', '12', 'AA2', '\nFCINC_US_12/8_AA_BRANDED\n', '', '', 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(2462, '', 'Nov', '13', '2024-11-06', '2', NULL, 'Flight Call INC', '2', '12', 'AA2', '\nFCINC_US_12/8_AA_BRANDED\n', '', '', 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(2463, '', 'Nov', '12', '2024-11-06', '2', NULL, 'Flight Call INC', '2', '11', 'Travel N4-UTC-5', 'FCINC_TopStates_24/7_SW', '', '', 0, 0, 0, 0, 574.11, 55, 0, 2, 287.05, 3.64, 6.92, 0, 50, 10, 13.08301205, 65.42, 0, 1, 50, 20, 0, 1, 1, 6.92, 6.916987952, 20, 0, 0, 0),
+(2464, '', 'Nov', '17', '2024-11-06', '2', NULL, 'Calls Mojo', '2', '11', 'Travel Generic', 'CallsMJ_MaxConv_9am-5pmEST_US_06/11', '', '', 0, 0, 0, 0, 6544.97, 623, 0, 14, 467.2, 2.25, 78.86, 0, 7.14, 1.57, -56.85506024, -258.43, 0, 1, 7, 22, 0, 7, 1, 11.27, 78.85506024, 22, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sub_module`
+--
+
+CREATE TABLE `sub_module` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `module_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `sub_module`
+--
+
+INSERT INTO `sub_module` (`id`, `name`, `module_id`) VALUES
+(1, 'D1', 1),
+(2, 'D2', 1),
+(3, 'RA', 2),
+(4, 'RB', 2);
 
 -- --------------------------------------------------------
 
@@ -2663,6 +2730,34 @@ INSERT INTO `team` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_module`
+--
+
+CREATE TABLE `user_module` (
+  `id` int(11) NOT NULL,
+  `admin_id` int(10) NOT NULL,
+  `module_id` int(10) NOT NULL,
+  `sub_module_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `user_module`
+--
+
+INSERT INTO `user_module` (`id`, `admin_id`, `module_id`, `sub_module_id`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 3),
+(5, 2, 2, 3),
+(6, 2, 1, 1),
+(7, 1, 1, 2),
+(8, 4, 1, 1),
+(9, 4, 2, 4),
+(10, 4, 1, 2),
+(11, 3, 2, 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vertical`
 --
 
@@ -2692,6 +2787,18 @@ INSERT INTO `vertical` (`id`, `name`) VALUES
 --
 
 --
+-- Indexes for table `admin_master`
+--
+ALTER TABLE `admin_master`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `modules`
+--
+ALTER TABLE `modules`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `offer_type`
 --
 ALTER TABLE `offer_type`
@@ -2716,9 +2823,21 @@ ALTER TABLE `raw_data`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sub_module`
+--
+ALTER TABLE `sub_module`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `team`
 --
 ALTER TABLE `team`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_module`
+--
+ALTER TABLE `user_module`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -2732,6 +2851,18 @@ ALTER TABLE `vertical`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_master`
+--
+ALTER TABLE `admin_master`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `modules`
+--
+ALTER TABLE `modules`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `offer_type`
 --
 ALTER TABLE `offer_type`
@@ -2741,7 +2872,7 @@ ALTER TABLE `offer_type`
 -- AUTO_INCREMENT for table `owner`
 --
 ALTER TABLE `owner`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `platform`
@@ -2753,13 +2884,25 @@ ALTER TABLE `platform`
 -- AUTO_INCREMENT for table `raw_data`
 --
 ALTER TABLE `raw_data`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2463;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2465;
+
+--
+-- AUTO_INCREMENT for table `sub_module`
+--
+ALTER TABLE `sub_module`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `team`
 --
 ALTER TABLE `team`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `user_module`
+--
+ALTER TABLE `user_module`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `vertical`
